@@ -6,8 +6,7 @@ export const STORE_CONSTANTS = {
 };
 
 // Need to read this value from .env file
-export const MAPBOX_TOKEN =
-  "pk.eyJ1Ijoic2FyYXRoa2FtbWFyaSIsImEiOiJjbDA1NGNqdnIweGtvM2ZxYjcwa2Z4aHhtIn0.vo5Xs4l4nWw5bmeBkrFLyQ";
+export const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
-
-export const RADIUS_TO_SHOW_FAVORITE_PLACES = 50;
+export const RADIUS_TO_SHOW_FAVORITE_PLACES =
+  process.env.REACT_APP_RADIUS_TO_SHOW_FAVORITE_PLACES;

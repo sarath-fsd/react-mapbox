@@ -1,0 +1,43 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.pageContainer {
+  width: 80%;
+  margin: 1 auto;
+}
+
+.pageContainer > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.pageContainer > div > label {
+  justify-self: end;
+  margin-right: 10px;
+}
+
+.pageContainer > div.actions {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+input[type="button"] {
+  grid-column: 2;
+}
+
+/* User Details Css */
+.userDetails {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin: 10px;
+}
+
+.card {
+  border: 1px solid blue;
+  padding: 10px;
+  margin: auto 10px;
+}

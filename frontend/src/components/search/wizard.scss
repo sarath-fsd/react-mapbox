@@ -1,0 +1,255 @@
+.wizard {
+    display: flex;
+    flex-direction: column;
+  
+    max-height: calc(100% - 24px);
+  
+    margin-left: 12px;
+    margin-top: 12px;
+  
+    background-color: white;
+    border-radius: 8px 8px;
+  
+    &__search-field {
+      width: 400px;
+  
+      z-index: 0;
+  
+      &_hidden {
+        display: none;
+      }
+    }
+  
+    &__content {
+      display: flex;
+      flex-direction: column;
+  
+      overflow: hidden;
+  
+      background-color: white;
+  
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0px 2px 4px rgba(21, 45, 72, 0.25);
+    }
+  
+    &__search-results {
+      width: 400px;
+  
+      margin: 8px 0;
+  
+      overflow: auto;
+    }
+  
+    &__no-results-full-view {
+      margin: 40px 0;
+    }
+  
+    &__item-details {
+      max-width: 424px;
+  
+      margin-top: 4px;
+    }
+  
+    &__item-edit {
+      max-width: 424px;
+    }
+  
+    &__edit-result {
+      margin-top: 36px;
+      padding: 0 40px;
+  
+      width: 424px;
+    }
+  
+    &__add-place-control {
+      position: absolute;
+      left: 424px;
+      top: 0;
+    }
+  
+    &__long-press-add-overlay {
+      position: fixed;
+  
+      padding-bottom: 48px;
+    }
+  
+    .wizard-layout {
+      flex: 1;
+    }
+  
+    .form {
+      flex: 1;
+    }
+  
+    /* full height wizard styles */
+    &_active {
+      height: 100%;
+      max-height: 100%;
+  
+      margin: 0;
+  
+      background-color: white;
+      border-radius: 0;
+  
+      box-shadow: 0px 2px 4px rgba(21, 45, 72, 0.25);
+  
+      .wizard__content {
+        flex: 1;
+  
+        padding: 0;
+  
+        width: 424px;
+  
+        border-radius: 0;
+  
+        box-shadow: none;
+      }
+  
+      .wizard__search-field {
+        margin: 12px;
+      }
+  
+      .wizard__search-results {
+        flex: 1;
+  
+        width: 100%;
+  
+        margin: 0;
+  
+        .search-results__result-title,
+        .search-results__result-details {
+          white-space: initial;
+        }
+  
+        .search-results__result-button {
+          padding: 16px;
+        }
+  
+        .search-results__result:not(:last-child) {
+          border-bottom: 1px solid #d5dae2;
+        }
+      }
+  
+      .search-results__add-place-button {
+        padding: 24px 34px;
+      }
+  
+      .wizard__add-place-control {
+        top: 12px;
+        left: 436px;
+      }
+    }
+  }
+  
+  .mobile .wizard {
+    height: 100%;
+    width: 100%;
+  
+    max-height: 100%;
+  
+    margin: 0;
+    padding: 12px 16px;
+  
+    background-color: initial;
+  
+    pointer-events: none;
+    border-radius: 0;
+  
+    &__search-field {
+      width: auto;
+  
+      pointer-events: initial;
+    }
+  
+    &__content {
+      margin-top: -8px;
+      padding-top: 8px;
+  
+      overflow: hidden;
+  
+      pointer-events: initial;
+    }
+  
+    &__search-results {
+      width: auto;
+    }
+  
+    &__add-place-control {
+      position: initial;
+  
+      left: initial;
+      top: initial;
+    }
+  
+    &__long-press-add-overlay {
+      padding: 0 16px 16px 16px;
+  
+      .overlay__content {
+        align-self: stretch;
+  
+        justify-content: center;
+      }
+    }
+  
+    &__long-press-add-categories {
+      width: 100%;
+    }
+  
+    &_search-focused,
+    &_search-results {
+      &:not(.wizard_active) {
+        background-color: white;
+        pointer-events: initial;
+  
+        .wizard__add-place-control,
+        .wizard__long-press-add-overlay {
+          // hides button so there is no z-index collision with search-results
+          display: none;
+        }
+      }
+    }
+  
+    &__item-details {
+      max-width: none;
+  
+      margin-top: 0;
+    }
+  
+    &__item-edit {
+      max-width: none;
+    }
+  
+    &_active {
+      padding: 0;
+  
+      box-shadow: none;
+  
+      .wizard__search-field {
+        margin: 12px 16px;
+      }
+  
+      .wizard__content {
+        flex: initial;
+        width: auto;
+  
+        margin: 0;
+        padding: 0;
+  
+        overflow: initial;
+      }
+  
+      .wizard-layout {
+        flex: initial;
+      }
+  
+      .wizard__search-results {
+        .search-results__result-button {
+          padding: 12px 16px;
+        }
+      }
+  
+      .search-results__add-place-button {
+        padding: 14px;
+      }
+    }
+  }

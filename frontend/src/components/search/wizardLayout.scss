@@ -1,0 +1,162 @@
+.wizard-layout {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #23262d;
+
+  &__header {
+    padding: 20px 30px;
+  }
+
+  &__menu-button {
+    margin-right: 16px;
+
+    line-height: 0;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+
+      fill: none;
+      stroke: #566171;
+    }
+  }
+
+  &__outer-menu-button {
+    // TODO: may be shown in the future
+    display: none;
+
+    padding: 10px;
+
+    line-height: 0;
+
+    background: white;
+    box-shadow: 0px 0.9px 2.7px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+
+  &__drag-handle {
+    display: none;
+
+    position: absolute;
+    top: 6px;
+    left: calc(50% - 16px);
+
+    // increase handle size but keep it invisible
+    padding: 12px;
+    margin: -12px;
+
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+
+    &-icon {
+      width: 32px;
+      height: 4px;
+
+      background: #dfdfdf;
+      border-radius: 3px;
+    }
+  }
+
+  &__close-button {
+    display: none;
+
+    position: absolute;
+
+    top: 24px;
+    right: 16px;
+  }
+
+  &__title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+
+
+  &__description {
+    margin-top: 20px;
+
+    font-size: 16px;
+    color: #566171;
+  }
+
+  &__content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+  }
+}
+
+.mobile .wizard-layout {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+
+  overflow: initial;
+
+  background: white;
+
+  border-radius: 8px 8px 0px 0px;
+  box-shadow: 0px 2px 4px rgba(21, 45, 72, 0.25);
+
+  &__header {
+    padding: 24px 56px 20px 16px;
+
+    border-bottom: 1px solid #d5dae2;
+  }
+
+  &__title {
+    font-size: 18px;
+
+    letter-spacing: -0.02em;
+  }
+
+  &__outer-menu-button {
+    display: initial;
+
+    position: absolute;
+
+    top: -60px;
+    left: 16px;
+  }
+
+  &__drag-handle {
+    display: initial;
+  }
+
+  &__close-button {
+    display: initial;
+  }
+
+  &__description {
+    margin-top: 8px;
+
+    font-size: 13px;
+  }
+
+  &_full-screen {
+    height: 100%;
+  }
+
+  &_resizable {
+    .wizard-layout__header {
+      touch-action: none;
+      user-select: none;
+    }
+  }
+}

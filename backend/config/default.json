@@ -1,0 +1,4 @@
+{
+  "db": "mongodb://localhost/places",
+  "port": "3900"
+}

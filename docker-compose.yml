@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+  web-tests:
+    image: react_maps_web
+    volumes:
+      - ./frontend:/app    
+  api:
+    build: ./backend
+    ports:
+      - 3001:3001
+    environment:
+      DB_URL: mongodb://db/react_maps
+    volumes:
+      - ./backend:/app
+    command: ./docker-entrypoint.sh
+  db:
+    image: mongo:4.0.28-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - react_maps:/data/db
+
+volumes:
+  react_maps:

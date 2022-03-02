@@ -1,0 +1,41 @@
+.app {
+  height: 100%;
+
+  &__wizard {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+nav {
+  display:flex;
+  align-items: center;
+
+  background-color: aliceblue;
+  padding: 16px 32px;
+
+  img {    
+    margin-right: 16px;
+    padding: 3px 0 3px;
+    color:#ffffff;
+  }
+
+  a {
+    margin-right: 16px;
+    color: #000;
+    font-size: 20px;
+
+    &.active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+.ac-maps {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,50 @@
+{
+  "name": "react-maps-ui",
+  "version": "1.0.0",
+  "description": "React app suggest list of places based on search.  Allows to add place a favorite place.   Another page that lists all favorite places.  Map also shows the favorite places near by to the searched place in another page.",
+  "main": "src/index.js",
+  "keywords": [
+    "react",
+    "leaflet",
+    "react-leaflet",
+    "maps"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.13.8"
+  },
+  "author": "Sarath Kammari",
+  "license": "ISC",
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "axios": "^0.21.4",
+    "http-proxy-middleware": "^2.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-map-gl": "^6.1.17",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "sass": "^1.49.9"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

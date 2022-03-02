@@ -130,9 +130,11 @@ const SearchResults = ({ locations, selectedLocation, onLocationSelect }) => {
 
                         try {
                           // Move API calls to Redux Middle instead of calling from component
-                          favoritePlace = await saveFavoritePlace(
+                          const saveReqRes = await saveFavoritePlace(
                             favoritePlace
                           );
+
+                          favoritePlace = saveReqRes.data;
                         } catch (error) {}
 
                         dispatch({
@@ -140,7 +142,7 @@ const SearchResults = ({ locations, selectedLocation, onLocationSelect }) => {
                             ? STORE_CONSTANTS.favoritePlaceRemoved
                             : STORE_CONSTANTS.favoritePlaceAdded,
                           payload: {
-                            favoritePlace: favoritePlace.data,
+                            favoritePlace: favoritePlace,
                           },
                         });
                       } else {
